@@ -11,11 +11,11 @@
 
 ```resorce/views``` 以下にある、それぞれのディレクトリ内に作成する。
 
-* ユーザー関連： ```/user```
-    * ユーザー設定関連: ```/setting```
-    * ユーザーページ関連: ```/page```
-* イベント関連: ```/event```
-* エラー関連: ```/error```
+* ユーザー関連： ```/User```
+    * ユーザー設定関連: ```/Setting```
+    * ユーザーページ関連: ```/Page```
+* イベント関連: ```/Event```
+* エラー関連: ```/Error```
 
 ***命名規則***
 ファイル名はアッパーキャメルケース(単語の頭文字を大文字、それ以外は小文字)で
@@ -51,13 +51,21 @@ PHPの[タイプヒンティング](http://php.net/manual/ja/language.oop5.typeh
 
 ### 実装方法
 作成するクラスでは必ずViewMakerインターフェースを実装(implements)してください。
-
+Bladeに必要なデータを受け取り、Viewクラスを返す静的メソッド ```make``` を定義してください。
+※必ず返り値、引数の型は指定してください。
 ```
-class MypageViewMaker implements ViewMaker
+use Illuminate\View;
+
+class LandingViewMaker
 {
-    public function make(User $user) 
-    {
+    public static function make(array $newEvent, array $recentEvent): View
+    {    
+        $data = [
+            'newEvent' => $newEvent,
+            'recentEvent' => $recentEvent,
+        ];
         
+        return View('User.Page.Mypage', $data);
     }
 } 
 ```
