@@ -52,7 +52,6 @@ PHPの[タイプヒンティング](http://php.net/manual/ja/language.oop5.typeh
 ### 実装方法
 作成するクラスでは必ずViewMakerインターフェースを実装(implements)してください。
 
-```
 class MypageViewMaker implements ViewMaker
 {
     public function make(User $user) 
@@ -60,4 +59,3 @@ class MypageViewMaker implements ViewMaker
         
     }
 } 
-```
