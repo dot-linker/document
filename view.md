@@ -1,6 +1,6 @@
 
 
-# 画面の作成(View)
+# 画面の作成（View）
 
 1. [Bladeファイルの作成](#blade)
 2. [ViewMakerファイルの作成](#viewMaker)
@@ -24,7 +24,6 @@
 例）ユーザーメール通知設定画面 ```resorce/views/user/setting/MailNotice.blade.php```
 
 ***共通ブレードの扱い***
-
 共通部分が存在する場合はその物事でディレクトリを作成し、その直下に ```layout.balde.php``` を作成する
 
 例）ユーザー設定画面 ```user/setting/layout.blade.php```
@@ -36,4 +35,18 @@
 
 <a name="viewMaker"></a>
 # ViewMakerファイルの作成
+
+### ViewMakerとは？
+PHPの[タイプヒンティング](http://php.net/manual/ja/language.oop5.typehinting.php)を利用し、コントローラ製作者に必要なデータを知らせるためのクラス
+
+### 作成場所
+
+```app/ViewMaker``` 以下にある、それぞれのディレクトリ内に作成する。
+
+* ユーザー関連： ```/User```
+    * ユーザー設定関連: ```/Setting```
+    * ユーザーページ関連: ```/Page```
+* イベント関連: ```/Event```
+* エラー関連: ```/Error```
+
 
