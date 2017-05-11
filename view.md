@@ -3,7 +3,7 @@
 # 画面の作成（View）
 
 1. [Bladeファイルの作成](#blade)
-2. [ViewMakerファイルの作成](#viewMaker)
+2. [ViewMakerファイルの作成](#viewMaker) //ViewDateに変更、Viewに渡すデータとデータの整形などをつかさどる
 
 <a name="blade"/>
 ## Bladeファイルの作成
